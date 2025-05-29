@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FediTimes - Kuratierte Fediverse Posts</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header-content">
+                <h1 class="logo">
+                    <span class="logo-icon">🌐</span>
+                    FediTimes
+                </h1>
+                <p class="subtitle">Kuratierte Posts aus dem Fediverse</p>
+            </div>
+            
+            <div class="controls">
+                <div class="control-group">
+                    <label for="sortSelect">Sortieren nach:</label>
+                    <select id="sortSelect" class="select">
+                        <option value="boosts">Boosts</option>
+                        <option value="comments">Kommentare</option>
+                        <option value="timestamp">Neueste</option>
+                    </select>
+                </div>
+                
+                <div class="status">
+                    <span id="statusText">Laden...</span>
+                    <div id="lastUpdated" class="last-updated"></div>
+                </div>
+            </div>
+        </header>
+
+        <main class="main">
+            <div id="loading" class="loading">
+                <div class="spinner"></div>
+                <p>Posts werden geladen...</p>
+            </div>
+            
+            <div id="error" class="error hidden">
+                <h3>❌ Fehler beim Laden</h3>
+                <p id="errorMessage"></p>
+                <button onclick="location.reload()" class="retry-btn">Erneut versuchen</button>
+            </div>
+            
+            <div id="postsContainer" class="posts-grid">
+                <!-- Posts werden hier eingefügt -->
+            </div>
+        </main>
+        
+        <footer class="footer">
+            <p>FediTimes - Ein Proof-of-Concept für Fediverse-Kuratierung</p>
+            <p>Daten werden alle 24 Stunden aktualisiert</p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

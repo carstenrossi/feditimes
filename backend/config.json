@@ -1,0 +1,7 @@
+{
+  "mastodon_instance": "https://mastodon.social",
+  "hashtags": ["fediverse", "mastodon"],
+  "max_posts": 10,
+  "hours_back": 24,
+  "sort_by": "boosts"
+}
