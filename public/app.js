@@ -149,6 +149,7 @@ class FediTimesApp {
             </header>
             
             <div class="post-content">
+                ${post.image_url ? `<img src="${this.escapeHtml(post.image_url)}" alt="Post image" class="post-image">` : ''}
                 ${post.content_html}
             </div>
             

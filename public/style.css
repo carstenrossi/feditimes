@@ -265,6 +265,15 @@ body {
     margin-bottom: 0;
 }
 
+/* Styling für Bilder im Post-Inhalt */
+.post-image {
+    width: 100%;
+    max-height: 400px; /* Maximale Höhe, um Layout nicht zu sprengen */
+    object-fit: cover; /* Stellt sicher, dass das Bild den Container gut füllt */
+    border-radius: 8px; /* Abgerundete Ecken für das Bild */
+    margin-bottom: 1rem; /* Abstand nach unten */
+}
+
 .post-content a {
     color: var(--primary-color);
     text-decoration: none;

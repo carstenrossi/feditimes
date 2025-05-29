@@ -84,6 +84,14 @@ class FediPostCurator:
                 if post.get('reblog'):
                     continue
                 
+                # Bild-URL extrahieren (falls vorhanden)
+                image_url = None
+                if post.get('media_attachments'):
+                    for attachment in post['media_attachments']:
+                        if attachment['type'] == 'image':
+                            image_url = attachment['url']
+                            break  # Nur das erste Bild nehmen
+
                 processed_post = {
                     'url': post['url'],
                     'author': post['account']['display_name'] or post['account']['username'],
@@ -93,7 +101,8 @@ class FediPostCurator:
                     'boosts': post['reblogs_count'],
                     'comments': post['replies_count'],
                     'timestamp': post['created_at'].isoformat(),
-                    'hashtag': hashtag
+                    'hashtag': hashtag,
+                    'image_url': image_url  # Bild-URL hinzugefügt
                 }
                 
                 processed_posts.append(processed_post)
